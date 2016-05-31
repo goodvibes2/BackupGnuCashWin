@@ -17,7 +17,7 @@
 
 /* Date       Vers Comment
    30/04/2016 1.00 Created.
-   15/05/2016 1.01 Backup straight to DropBox/GnuCash i.e. no need to keep
+   15/05/2016 1.01 Backup straight to Dropbox/GnuCash i.e. no need to keep
                     another copy in the Backup subdirectory of the GnuCash data
                     directory.
    16/05/2016 1.02 Fix FileName.filename index out of bounds when passing a
@@ -26,6 +26,7 @@
                    a. Remove unused import.
                    b. If not Windows, use getenv("USER") instead of USERNAME to
                       fix NullPointerException in Ubuntu.
+                   c. DropBox -> Dropbox.
    
 */
 
@@ -259,7 +260,7 @@ public class BackupGnuCashController implements Initializable {
         ));
         
         txtDropBox.setTooltip(new Tooltip(
-            "DropBox Base Directory:\n" +
+            "Dropbox Base Directory:\n" +
             "The encrypted compressed backup file will be saved in a sub-directory\n" +
             "of this directory.\n" +
             "The GnuCash backup file will be saved in a sub-directory called 'GnuCash'.\n"
@@ -277,7 +278,7 @@ public class BackupGnuCashController implements Initializable {
         btnBupGC.setTooltip(new Tooltip(
             "Backup GnuCash:\n" +
             "The data file will be archived (compressed and encrypted) to the 'GnuCash' sub-directory\n" +
-            "of the DropBox directory. The data file itself remains unaltered.\n" +
+            "of the Dropbox directory. The data file itself remains unaltered.\n" +
             "Two additional GnuCash files are included in the archive:\n" +
             "1. The saved reports configuration file:\n" +
             " " + HOME_DIR + FILE_SEPARATOR + ".gnucash" + FILE_SEPARATOR +
@@ -375,19 +376,19 @@ public class BackupGnuCashController implements Initializable {
             taLog.appendText("Error: GnuCash data is not readable or does not exist\n");
         }
 
-        // Validate DropBox directory
+        // Validate Dropbox directory
 
         if (Files.isWritable(Paths.get(txtDropBox.getText()))) {
             if (Files.isWritable(Paths.get(txtDropBox.getText() + FILE_SEPARATOR
                     + "GnuCash"))) {
                 boolDropBoxOk = true;
             } else {
-                taLog.appendText("Error: DropBox directory " + 
+                taLog.appendText("Error: Dropbox directory " + 
                     txtDropBox.getText() + FILE_SEPARATOR +
                     "GnuCash is not writable or does not exist\n");
             }
         } else {
-            taLog.appendText("Error: DropBox directory " + txtDropBox.getText()
+            taLog.appendText("Error: Dropbox directory " + txtDropBox.getText()
                     + " is not writable or does not exist\n");
         }
 
@@ -455,17 +456,17 @@ public class BackupGnuCashController implements Initializable {
      * /C               NOT Used
      * "E:\Program Files\7-Zip\7z.exe"
      *   a
-     *   E:\Data\DropBox\GnuCash\GnuCashXXXX_%yyyymmddhhmm%_267.7z
+     *   E:\Data\Dropbox\GnuCash\GnuCashXXXX_%yyyymmddhhmm%_267.7z
      *   -p%pswd%
-     *   E:\Data    \GnuCash\267\XXXX\XXXX.gnucash
+     *   E:\Data\GnuCash\267\XXXX\XXXX.gnucash
      *   C:\\users\\[Name]\\.gnucash\\saved-reports-2.4
      *   C:\\users\\[Name]\\.gnucash\\books\\XXXX.gnucash.gcm
      * Linux:
-     * bash         Needed to strip quotes around args
-     * -c
-     * "/usr/bin/7z"
+     * bash         Needed to strip quotes around args      NOT Used
+     * -c                                                   NOT Used
+     * /usr/bin/7z
      *   a
-     *   /home/[USER_NAME]/DropBox\GnuCash\GnuCashXXXX_yyyymmddhhmm_267.7z
+     *   /home/[USER_NAME]/Dropbox\GnuCash\GnuCashXXXX_yyyymmddhhmm_267.7z
      *   -p"pswd"
      *   /home/[USER_NAME]/GnuCash/267/XXXX\XXXX.gnucash
      *   /home/[USER_NAME]/.gnucash/saved-reports-2.4
@@ -554,9 +555,9 @@ public class BackupGnuCashController implements Initializable {
             
             // archive file string eg
             // Windows:
-            // C:\Users\[USER_NAME]\DropBox\GnuCash\GnuCashXXXX_yyyymmddhhmm_267.7z
+            // C:\Users\[USER_NAME]\Dropbox\GnuCash\GnuCashXXXX_yyyymmddhhmm_267.7z
             // or Linux:
-            // /home/[USER_NAME]/DropBox/GnuCash/GnuCashXXXX_%yyyymmddhhmm%_267.7z
+            // /home/[USER_NAME]/Dropbox/GnuCash/GnuCashXXXX_%yyyymmddhhmm%_267.7z
             FileName fileName = new FileName(txtGcDatFilStr.getText(),
                 FILE_SEPARATOR, '.');
             LocalDateTime today = LocalDateTime.now();
@@ -732,10 +733,10 @@ public class BackupGnuCashController implements Initializable {
     @FXML
     public void handleBtnActionChooseDropBox() {
 
-        // Chose the DropBox base directory
+        // Chose the Dropbox base directory
         
         final DirectoryChooser directoryChooser = new DirectoryChooser();
-        directoryChooser.setTitle("Choose DropBox Base Directory");
+        directoryChooser.setTitle("Choose Dropbox Base Directory");
         final File file = new File(txtDropBox.getText());
         final String strDir = file.getPath();
         final Path pathDropDir = Paths.get(strDir);

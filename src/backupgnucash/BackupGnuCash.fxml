@@ -78,7 +78,7 @@
          </font>
       </Label>
       <TextField fx:id="txtGcVer" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-      <Label fx:id="lblDropBox" text="DropBox" GridPane.rowIndex="7">
+      <Label fx:id="lblDropBox" text="Dropbox" GridPane.rowIndex="7">
          <font>
             <Font size="14.0" />
          </font>
