@@ -209,7 +209,20 @@ Home Page:
 None
 
 Precompiled binaries:
-https:://github.com/goodvibes2/BackupGnuCashWin/blob/master/dist/BackupGnuCash.jar             ???
+https:://github.com/goodvibes2/BackupGnuCashWin/blob/master/dist/BackupGnuCash.jar
+or
+https:://github.com/goodvibes2/BackupGnuCashLinux/blob/master/dist/BackupGnuCash.jar
+
+Being Java bytecode, either of the above should work in either GNU/Linux or
+Windows, so long as dependencies are installed.
+
+Paste either of the above URL's into a web browser,
+Right click on Raw button, Save target as,
+select the required location.
+
+I suggest:
+GNU/Linux: /home/[USER_NAME]/BackupGnuCash/BackupGnuCash.jar
+Windows:   C:\Users\[USER_NAME]\Documents\BackupGnuCash\BackupGnuCash.jar
 
 
 ############
@@ -241,21 +254,26 @@ To download the prebuilt BackupGnuCash.jar from github:
         Java OpenJDK 8, OpenJFX, and netbeans IDE 8.1
 
     The java source files in both the above projects should be identical
-    and the dist/BackupGnuCash.jar files in both should work in both GNU/Linux
-    or Windows. The differences between these projects are only in the netbeans
-    project files used for building the project. This is so as to make it easy
-    to download (or clone) the project, set up the dependencies, and then be
-    able to open the project in netbeans, and be able to build it without any
-    further setup.
+    and the dist/BackupGnuCash.jar files in both, being Java bytecode, should
+    work in both GNU/Linux and Windows. The differences between these projects
+    are only in the netbeans project files used for building the project.
+    This is so as to make it easy to download (or clone) the project, set up the
+    dependencies, and then be able to open the project in netbeans IDE, and
+    build it without any further setup.
 
-  Open either of the above URL's, ???
-  download to say
-    GNU/Linux
-      /home/[USER_NAME]/BackupGnuCash/BackupGnuCash.jar
-    Windows
-      C:\Users\[USER_NAME]\Documents\BackupGnuCash\BackupGnuCash.jar
+  Paste either of the following URL's into a web browser:
 
-???
+https:://github.com/goodvibes2/BackupGnuCashWin/blob/master/dist/BackupGnuCash.jar
+ or
+https:://github.com/goodvibes2/BackupGnuCashLinux/blob/master/dist/BackupGnuCash.jar
+
+Right click on the Raw button, Save target as,
+  select the required location.
+
+I suggest:
+GNU/Linux: /home/[USER_NAME]/BackupGnuCash/BackupGnuCash.jar
+Windows:   C:\Users\[USER_NAME]\Documents\BackupGnuCash\BackupGnuCash.jar
+
 
 If you wish to download and use the prebuilt BackupGnuCash.jar from
 this github project, the following packages are required to be installed:
@@ -385,7 +403,7 @@ Building & Installing
     Windows
       Windows 10 64-bit
       Oracle 8 jdk (1.8.0_91) which includes JavaFX
-      SceneBuilder ???
+      SceneBuilder Oracle SceneBuilder 2.0
       netbeans IDE 8.0
       7-Zip 9.20
 
@@ -488,7 +506,9 @@ Windows:
       or
       E:\Program Files (x86)\7-Zip\7z.exe
 
-??? download project
+
+To download the source files and netbeans project:
+
   Note: There are 2 versions of BackupGnuCash on github:
     https://github.com/goodvibes2/BackupGnuCashWin
       which is the project for Microsoft Windows using:
@@ -506,13 +526,26 @@ Windows:
     able to open the project in netbeans, and be able to build it without any
     further setup.
 
-  Open either of the above URL's, ???
-  download to say
-    GNU/Linux
-      /home/[USER_NAME]/BackupGnuCash/BackupGnuCash.jar
-    Windows
-      C:\Users\[USER_NAME]\Documents\BackupGnuCash\BackupGnuCash.jar
-???
+  There are 2 main ways to download the netbeans project from github:
+
+  1) If you already have a github account and git installed, you can clone:
+     GNU/Linux: At the command line:
+       cd
+       mkdir NetBeansProjects
+       cd NetBeansProjects
+       git clone https://github.com/goodvibes2/BackupGnuCashLinux BackupGnuCash
+     Windows: In a git shell:
+       cd ~/Documents
+       mdkir NetBeansProjects
+       cd NetBeansProjects
+       git clone https://github.com/goodvibes2/BackupGnuCashWin BackupGnuCash
+
+  OR
+
+  2) Open the required Linux or Windows URL from above in a web browser,
+     Click on the green 'Clone or download' button,
+     Click on 'Download ZIP'.
+
 
 ###################
 Supported Platforms
