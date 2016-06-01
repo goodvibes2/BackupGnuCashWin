@@ -1,10 +1,9 @@
 #          BackupGnuCash 1.10 README.md file.
 
-This README.md is formatted for github markdown and is most easily read by using a web browser
+This README.md is formatted for github markdown and is most easily read using a web browser
 to view https://github.com/goodvibes2/BackupGnuCashWin/blob/master/src/backupgnucash/README.md.
 
 The last known BackupGnuCash stable series is the 1.1x series.
-------------------------------------------------------------
 
 ## Table of Contents:
 ------------------
@@ -56,27 +55,27 @@ Features include:
   - All GnuCash data files needed for system recovery are backed up.
     The 3 files backed up into each archive file are:
 
-1) the main GnuCash data file which usually has a .gnucash extension.
-    For example:
-    ```
-       GNU/Linux: /home/[USER_NAME]/GnuCash/[BOOK].gnucash
-       Windows:   C:\Users\[USER_NAME]\Documents\GnuCash\[BOOK].gnucash
-    ```
+    1) the main GnuCash data file which usually has a .gnucash extension.
+      For example:
+      ```
+         GNU/Linux:              /home/[USER_NAME]/GnuCash/[BOOK].gnucash
+         Windows:   C:\Users\[USER_NAME]\Documents\GnuCash\[BOOK].gnucash
+      ```
 
-2) the saved reports file, for example
-   ```
-       GNU/Linux:   /home/[USER_NAME]/.gnucash/saved-reports-2.4
-       Windows: C:\Users\[USER_NAME]\.gnucash\saved-reports-2.4
-    ```
-    Note: the 2.4 suffix is used for both GnuCash 2.4 and 2.6.
-    As of 29th May 2016 current stable version of GnuCash is
-    2.6.12.
+    2) the saved reports file, for example
+       ```
+         GNU/Linux:   /home/[USER_NAME]/.gnucash/saved-reports-2.4
+         Windows:  C:\Users\[USER_NAME]\.gnucash\saved-reports-2.4
+       ```
+          **Note**: the 2.4 suffix is used for both GnuCash 2.4 and 2.6.
+          As of 29th May 2016 current stable version of GnuCash is
+          2.6.12.
 
-3) the preferences file, usually
-    ```
-       GNU/Linux:   /home/[USER_NAME]/.gnucash/books/XXXX.gnucash.gcm
-       Windows: C:\Users\[USER_NAME]\.gnucash\books\XXXX.gnucash.gcm
-    ```
+    3) the preferences file, usually
+       ```
+        GNU/Linux:   /home/[USER_NAME]/.gnucash/books/XXXX.gnucash.gcm
+        Windows: C:\Users\[USER_NAME]\.gnucash\books\XXXX.gnucash.gcm
+       ```
 
     These 3 files are all that is usually required when restoring or
     moving to a new computer, apart from the GnuCash program itself
@@ -235,14 +234,15 @@ Features include:
     each time you enter it.
 
 
-### Home Page:
+### Home Page
 None
 
 ### Precompiled binaries
+
 ```
-https:://github.com/goodvibes2/BackupGnuCashWin/blob/master/dist/BackupGnuCash.jar
-or
-https:://github.com/goodvibes2/BackupGnuCashLinux/blob/master/dist/BackupGnuCash.jar
+ https:://github.com/goodvibes2/BackupGnuCashWin/blob/master/dist/BackupGnuCash.jar
+ or
+ https:://github.com/goodvibes2/BackupGnuCashLinux/blob/master/dist/BackupGnuCash.jar
 ```
 Being Java bytecode, either of the above should work in either GNU/Linux or
 Windows, so long as dependencies are installed.
@@ -255,7 +255,7 @@ select the required location.
 
 I suggest:
 ```
-GNU/Linux: /home/[USER_NAME]/BackupGnuCash/BackupGnuCash.jar
+GNU/Linux:              /home/[USER_NAME]/BackupGnuCash/BackupGnuCash.jar
 Windows:   C:\Users\[USER_NAME]\Documents\BackupGnuCash\BackupGnuCash.jar
 ```
 
@@ -322,8 +322,8 @@ If you wish to download and use the prebuilt BackupGnuCash.jar from
 this github project, the following packages are required to be installed:
 
 #### GNU/Linux
-  These instructions are for Ubuntu 16.04 but should be similar for other
-  Gnu/Linux flavours/versions.
+These instructions are for Ubuntu 16.04 but should be similar for other
+Gnu/Linux flavours/versions.
 
 ##### Java
 BackupGnuCash uses Java version 8 (or later) and JavaFX.
