@@ -19,9 +19,8 @@ The last known BackupGnuCash stable series is the 1.1x series.
 ## Overview
 --------
 
-BackupGnuCash is an application for simplifying the creation of
-encrypted backups of the data files used by the **GnuCash** personal
-finance manager.
+BackupGnuCash is an application for easily creating offsite encrypted backups
+of the data files used by the **GnuCash** personal finance manager.
 See http://www.gnucash.org for more information about GnuCash.
 
 This application is written in Java version 8 using JavaFX (or openjfx) for
@@ -40,198 +39,197 @@ Please read all of this document before asking for help.
 --------
 Features include:
 
-  - Available for both GNU/Linux and Microsoft Windows.
-    BackupGnuCash has been tested in GNU/Linux Ubuntu 16.04 and Windows 10.
-    GnuCash is also available for Mac OS/X and BackupGnuCash may work
-    but this has not (yet) been tested.
+- Available for both GNU/Linux and Microsoft Windows.
+BackupGnuCash has been tested in GNU/Linux Ubuntu 16.04 and Windows 10.
+GnuCash is also available for Mac OS/X and BackupGnuCash may work
+but this has not (yet) been tested.
 
-  - An easy-to-use interface.
-    After finishing a GnuCash session, you just start BackupGnuCash,
-    optionally select different directories, enter the password for encryption
-    and click the Backup button. BackupGnuCash then encrypts the GnuCash data,
-    saved reports and preferences files to a date/time stampded file name in
-    the local 3rd party cloud storage directory.
+- An easy-to-use interface.
+After finishing a GnuCash session, you just start BackupGnuCash,
+optionally select different directories, enter the password for encryption
+and click the Backup button. BackupGnuCash then encrypts the GnuCash data,
+saved reports and preferences files to a date/time stampded file name in
+the local 3rd party cloud storage directory.
 
-  - All GnuCash data files needed for system recovery are backed up.
-    The 3 files backed up into each archive file are:
-
-    1) the main GnuCash data file which usually has a .gnucash extension.
-      For example:
-      ```
-         GNU/Linux:              /home/[USER_NAME]/GnuCash/[BOOK].gnucash
-         Windows:   C:\Users\[USER_NAME]\Documents\GnuCash\[BOOK].gnucash
-      ```
-
-    2) the saved reports file, for example
-       ```
-         GNU/Linux:   /home/[USER_NAME]/.gnucash/saved-reports-2.4
-         Windows:  C:\Users\[USER_NAME]\.gnucash\saved-reports-2.4
-       ```
-          **Note**: the 2.4 suffix is used for both GnuCash 2.4 and 2.6.
-          As of 29th May 2016 current stable version of GnuCash is
-          2.6.12.
-
-    3) the preferences file, usually
+- All GnuCash data files needed for system recovery are backed up.
+The 3 files backed up into each archive file are:
+  1. the **main GnuCash data file** which usually has a .gnucash extension.
+     For example:
+     ```
+       GNU/Linux:              /home/[USER_NAME]/GnuCash/[BOOK].gnucash
+       Windows:   C:\Users\[USER_NAME]\Documents\GnuCash\[BOOK].gnucash
+     ```
+  
+  2. the **saved reports file**, for example
+     ```
+       GNU/Linux:   /home/[USER_NAME]/.gnucash/saved-reports-2.4
+       Windows:  C:\Users\[USER_NAME]\.gnucash\saved-reports-2.4
+     ```
+     **Note**: the 2.4 suffix is used for both GnuCash 2.4 and 2.6.
+     As of 29th May 2016 current stable version of GnuCash is
+     2.6.12.
+  
+  3. the **preferences file**, usually
        ```
         GNU/Linux:   /home/[USER_NAME]/.gnucash/books/XXXX.gnucash.gcm
         Windows: C:\Users\[USER_NAME]\.gnucash\books\XXXX.gnucash.gcm
        ```
 
-    These 3 files are all that is usually required when restoring or
-    moving to a new computer, apart from the GnuCash program itself
-    which can be downloaded from https://www.gnucash.org/download.
+  These 3 files are all that is usually required when restoring or
+  moving to a new computer, apart from the GnuCash program itself
+  which can be downloaded from https://www.gnucash.org/download.
 
-  - One-time setup of:
-    1) **location and name of the GnuCash data file**.
+- One-time setup of:
+  1. **location and name of the GnuCash data file**.
 
-       Once a GnuCash data file has been selected in the BackupGnuCash
-       window, the file modification date and time is display below it,
-       so the user can check it approximately matches the date and time
-       of their last GnuCash session.
+     Once a GnuCash data file has been selected in the BackupGnuCash
+     window, the file modification date and time is display below it,
+     so the user can check it approximately matches the date and time
+     of their last GnuCash session.
 
-       If you find that the GnuCash data file has a file name like
-       ```
-             [BOOK].gnucash.yyyymmddhhmmss.gnucash
-       ```
+     If you find that the GnuCash data file has a file name like
+     ```
+      [BOOK].gnucash.yyyymmddhhmmss.gnucash
+     ```
 
-       where yyyymmddhhmmss is a string of numbers representing a date
-       and time, then probably some-one has mistakenly opened a GnuCash
-       automatically created backup, and forgotten to re-open the real
-       GnuCash data file.
+     where yyyymmddhhmmss is a string of numbers representing a date
+     and time, then probably some-one has mistakenly opened a GnuCash
+     automatically created backup, and forgotten to re-open the real
+     GnuCash data file.
 
-       In this case, to go back to using the intended data file,  open
-       the latest (or most correct) data file, then use
-       'File', 'Save As' to save in the intended data file.
-       The next time GnuCash is opened, it will open the intended data 
-       file because GnuCash, unless told to open a specific data file,
-       will open the last data file it used.
+     In this case, to go back to using the intended data file,  open
+     the latest (or most correct) data file, then use
+     'File', 'Save As' to save in the intended data file.
+     The next time GnuCash is opened, it will open the intended data 
+     file because GnuCash, unless told to open a specific data file,
+     will open the last data file it used.
 
-    2) **GnuCash version** may optionally be specified which
-       will add a suffix of _[Version] to the archive file name
-       (before the .7z extension).
-       While GnuCash developers try hard to make most versions of
-       the data files backwards and forwards compatible, some
-       versions are not totally backwards and forwards compatible,
-       so this information may be useful if a restore is needed.
+  2. **GnuCash version** may optionally be specified which
+     will add a suffix of _[Version] to the archive file name
+     (before the .7z extension).
+     While GnuCash developers try hard to make most versions of
+     the data files backwards and forwards compatible, some
+     versions are not totally backwards and forwards compatible,
+     so this information may be useful if a restore is needed.
 
-       I suggest for example if you are using GnuCash 2.6.12, enter version
-       ```
+     I suggest for example if you are using GnuCash 2.6.12, enter version
+     ```
        2612
-       ```
-    3) **location of the base archive directory**, for example:
-       ```
-            GNU/Linux: /home/[USER_NAME]/Dropbox
-            Windows:   C:\Users\[USER_NAME]\Dropbox
-       ```
-       The archive is created in a sub-directory of the base archive
-       directory, called "GnuCash". For example:
-       ```
-             GNU/Linux: /home/[USER_NAME]/Dropbox/GnuCash
-             Windows:   C:\Users\[USER_NAME]\Dropbox\GnuCash
-       ```
-       The GnuCash sub-directory must be manually created. If the GnuCash
-       sub-directory of the archive directory does not exist, BackupGnuCash
-       will show an error message in the Log area at the bottom of the
-       window and the Backup button will be disabled.
+     ```
+  3. **location of the base archive directory**, for example:
+     ```
+          GNU/Linux: /home/[USER_NAME]/Dropbox
+          Windows:   C:\Users\[USER_NAME]\Dropbox
+     ```
+     The archive is created in a sub-directory of the base archive
+     directory, called "GnuCash". For example:
+     ```
+           GNU/Linux: /home/[USER_NAME]/Dropbox/GnuCash
+           Windows:   C:\Users\[USER_NAME]\Dropbox\GnuCash
+     ```
+     The GnuCash sub-directory must be manually created. If the GnuCash
+     sub-directory of the archive directory does not exist, BackupGnuCash
+     will show an error message in the Log area at the bottom of the
+     window and the Backup button will be disabled.
 
-    After valid (existing) entry of:
+  After valid (existing) entry of:
 
-      - the location and name of the main GnuCash data file
-      - the location of the base archive directory
+    - the location and name of the main GnuCash data file
+    - the location of the base archive directory
 
-    BackupGnuCash enables the **Save Settings** button, which when clicked,
-    will save the 2 above entries, and the Version field (optional), in file:
-    ```
-      GNU/Linux: /home/[USER_NAME]/.BupGc/defaultProperties
-      Windows: C:\Users\USER_NAME]\.BupGc/defaultProperties
-    ```
-    Note that the password is NOT saved and must be entered each time
-    BackupGnuCash is started. The password must be at least 8 characters.
+  BackupGnuCash enables the **Save Settings** button, which when clicked,
+  will save the 2 above entries, and the Version field (optional), in file:
+  ```
+    GNU/Linux: /home/[USER_NAME]/.BupGc/defaultProperties
+    Windows: C:\Users\USER_NAME]\.BupGc/defaultProperties
+  ```
+  **Note** the password is NOT saved and must be entered each time
+  BackupGnuCash is started. The password must be at least 8 characters.
 
-    The next time BackupGnuCash is started, the 3 saved fields will be
-    automatically loaded from the defaultProperties file.
+  The next time BackupGnuCash is started, the 3 saved fields will be
+  automatically loaded from the defaultProperties file.
 
-    Saving the locations of multiple GnuCash books is currently not
-    supported. In this case, if you wish to backup a book which is
-    not the one for which the settings are saved, use the **Browse** button
-    to select the required book and optionally select a different
-    archive file directory. As the book name is part of the archive
-    file name, so long as books have unique names, archive files
-    for multiple books may be put in the same archive directory.
+  Saving the locations of multiple GnuCash books is currently not
+  supported. In this case, if you wish to backup a book which is
+  not the one for which the settings are saved, use the **Browse** button
+  to select the required book and optionally select a different
+  archive file directory. As the book name is part of the archive
+  file name, so long as books have unique names, archive files
+  for multiple books may be put in the same archive directory.
 
-  - The archive file is intended to be created in a local directory
-    which is replicated in the 'cloud' by a 3rd party cloud storage
-    service such as Dropbox, Google Drive or Microsoft OneDrive.
-    This makes the backup an off-site and local backup.
-    It is the **users responsibility** to regularly ensure the 3rd party
-    cloud storage service is working correctly, say by connecting to the
-    service in a web browser or on another computer and checking
-    the expected files exist and the contents match the local copy.
+- The archive file is intended to be created in a local directory
+which is replicated in the 'cloud' by a 3rd party cloud storage
+service such as Dropbox, Google Drive or Microsoft OneDrive.
+This makes the backup an off-site and local backup.
+It is the **users responsibility** to regularly ensure the 3rd party
+cloud storage service is working correctly, say by connecting to the
+service in a web browser or on another computer and checking
+the expected files exist and the contents match the local copy.
 
-    It is also the **users responsibility** to periodically remove old
-    backups from the archive directory to ensure any cloud storage
-    capacity limits are not exceeded.
+It is also the **users responsibility** to periodically remove old
+backups from the archive directory to ensure any cloud storage
+capacity limits are not exceeded.
 
-    BackupGnuCash refers to the base archive directory as the **Dropbox**
-    directory, but it could be used with any other cloud storage
-    service, like Google Drive or Microsoft OneDrive, which operates
-    in a similar fashion.
+BackupGnuCash refers to the base archive directory as the **Dropbox**
+directory, but it could be used with any other cloud storage
+service, like Google Drive or Microsoft OneDrive, which operates
+in a similar fashion.
 
-    The archive file name will be created in the following format:
-    ```
-      GnuCash[BOOK]_yyyyMMddhhmmss[_Version].7z
-    ```
-    where
+The archive file name will be created in the following format:
+```
+  GnuCash[BOOK]_yyyyMMddhhmmss[_Version].7z
+```
+where
     - [BOOK] is the data file name without the .gnucash externsion
     - yyyyMMddhhmmss is the current date and time 
     - [_Version] is the optional GnuCash version number if entered.
 
-  - Each archive file will contain encrypted copies of the 3 data files.
-    The files will be encrypted, using the entered password, by free
-    software **7-Zip**, using AES-256 encryption.
+- Each archive file will contain encrypted copies of the 3 data files.
+The files will be encrypted, using the entered password, by free
+software **7-Zip**, using AES-256 encryption.
 
-    BackupGnuCash is not intended to be used to conceal illegal activities.
-    The GnuCash data files are encrypted in the archive because, even though
-    3rd party cloud storage services usually try hard to ensure the privacy
-    of your data, why risk unencrypted data in the cloud if you don't have to?
+BackupGnuCash is not intended to be used to conceal illegal activities.
+The GnuCash data files are encrypted in the archive because, even though
+3rd party cloud storage services usually try hard to ensure the privacy
+of your data, why risk unencrypted data in the cloud if you don't have to?
 
-    BackupGnuCash does not provide any facility for extracting the data files
-    from an encrypted archive. 7-Zip must be installed in order for the
-    encrypted archives to be created and for the data files to be extracted.
+BackupGnuCash does not provide any facility for extracting the data files
+from an encrypted archive. 7-Zip must be installed in order for the
+encrypted archives to be created and for the data files to be extracted.
 
-    **Windows**: 7-Zip includes gui tool **7-Zip File Manager** which can be used to
-    decrypt the archive files if they need to be restored.
-    Alternatively, use the 7-Zip command in a command prompt window, E.g.
-    ```
-        C:\Program Files\7-Zip\7z.exe e archive.7z
-    ```
-    extracts all files from archive archive.7z to the current folder.
-    ```
-        C:\Program Files\7-Zip\7z.exe e archive.7z -oc:\soft *.gnucash
-    ```
-    extracts *.gnucash files from archive archive.7z to c:\soft folder.
+**Windows**: 7-Zip includes gui tool **7-Zip File Manager** which can be used to
+decrypt the archive files if they need to be restored.
+Alternatively, use the 7-Zip command in a command prompt window, E.g.
+```
+    C:\Program Files\7-Zip\7z.exe e archive.7z
+```
+extracts all files from archive archive.7z to the current folder.
+```
+  C:\Program Files\7-Zip\7z.exe e archive.7z -oc:\soft *.gnucash
+```
+extracts *.gnucash files from archive archive.7z to c:\soft folder.
 
-    **GNU/Linux**: **Archive Manager** can be used to manage 7-Zip files if the
-    **p7zip-full** package is installed.
-    Alternatively, use the 7-Zip command in a terminal window, E.g.
-    ```
-        7z e archive.7z
-    ```
-    extracts all files from archive archive.7z to the current directory.
-    ```
-        7z e archive.7z -o/tmp "*.gnucash"
-    ```
-    extracts *.gnucash files from archive archive.7z to /tmp directory.
+**GNU/Linux**: **Archive Manager** can be used to manage 7-Zip files if the
+**p7zip-full** package is installed.
+Alternatively, use the 7-Zip command in a terminal window, E.g.
+```
+    7z e archive.7z
+```
+extracts all files from archive archive.7z to the current directory.
+```
+  7z e archive.7z -o/tmp "*.gnucash"
+```
+extracts *.gnucash files from archive archive.7z to /tmp directory.
 
-    Of course, the user needs to enter the password carefully, and remember it!
-    **If the password is entered incorrectly or forgotten, the encrypted archives
-    will be of no use.**
+Of course, the user needs to enter the password carefully, and remember it!
+**If the password is entered incorrectly or forgotten, the encrypted archives
+will be of no use.**
 
-    There is a **Show** checkbox to the right of the password. If this is checked,
-    the password will display. If it is unchecked, the characters of the
-    password will display as asterixes.
-    After ensuring no-one is watching, show and carefully check the password
-    each time you enter it.
+There is a **Show** checkbox to the right of the password. If this is checked,
+the password will display. If it is unchecked, the characters of the
+password will display as asterixes.
+After ensuring no-one is watching, show and carefully check the password
+each time you enter it.
 
 
 ### Home Page
