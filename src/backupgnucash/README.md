@@ -56,24 +56,24 @@ Features include:
     1) the main GnuCash data file which usually has a .gnucash extension.
 
        For example:
-
+```
        GNU/Linux: /home/[USER_NAME]/GnuCash/[BOOK].gnucash
        Windows:   C:\Users\[USER_NAME]\Documents\GnuCash\[BOOK].gnucash
-
+```
     2) the saved reports file, for example
-
+```
        GNU/Linux:   /home/[USER_NAME]/.gnucash/saved-reports-2.4
        Windows: C:\Users\[USER_NAME]\.gnucash\saved-reports-2.4
-
+```
        Note: the 2.4 suffix is used for both GnuCash 2.4 and 2.6.
          As of 29th May 2016 current stable version of GnuCash is
          2.6.12.
 
     3) the preferences file, usually
-
+```
        GNU/Linux:   /home/[USER_NAME]/.gnucash/books/XXXX.gnucash.gcm
        Windows: C:\Users\[USER_NAME]\.gnucash\books\XXXX.gnucash.gcm
-
+```
     These 3 files are all that is usually required when restoring or
     moving to a new computer, apart from the GnuCash program itself
     which can be downloaded from the GnuCash website
