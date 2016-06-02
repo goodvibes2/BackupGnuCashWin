@@ -157,79 +157,79 @@ The 3 files backed up into each archive file are:
   file name, so long as books have unique names, archive files
   for multiple books may be put in the same archive directory.
 
-- The archive file is intended to be created in a local directory
-which is replicated in the 'cloud' by a 3rd party cloud storage
-service such as Dropbox, Google Drive or Microsoft OneDrive.
-This makes the backup an off-site and local backup.
-It is the **users responsibility** to regularly ensure the 3rd party
-cloud storage service is working correctly, say by connecting to the
-service in a web browser or on another computer and checking
-the expected files exist and the contents match the local copy.
+- The **archive** file is intended to be created in a local directory
+  which is replicated in the _cloud_ by a 3rd party cloud storage
+  service such as Dropbox, Google Drive or Microsoft OneDrive.
+  This makes the backup an off-site and local backup.
+  It is the **user's responsibility** to regularly ensure the 3rd party
+  cloud storage service is working correctly, say by connecting to the
+  service in a web browser or on another computer and checking
+  the expected files exist and the contents match the local copy.
 
-It is also the **users responsibility** to periodically remove old
-backups from the archive directory to ensure any cloud storage
-capacity limits are not exceeded.
+  It is also the **user's responsibility** to periodically remove old
+  backups from the archive directory to ensure any cloud storage
+  capacity limits are not exceeded.
 
-BackupGnuCash refers to the base archive directory as the **Dropbox**
-directory, but it could be used with any other cloud storage
-service, like Google Drive or Microsoft OneDrive, which operates
-in a similar fashion.
+  BackupGnuCash refers to the base archive directory as the **Dropbox**
+  directory, but it could be used with any other cloud storage
+  service, like Google Drive or Microsoft OneDrive, which operates
+  in a similar fashion.
 
-The archive file name will be created in the following format:
-```
+  The archive file name will be created in the following format:
+  ```
   GnuCash[BOOK]_yyyyMMddhhmmss[_Version].7z
-```
-where
+  ```
+  where
     - [BOOK] is the data file name without the .gnucash externsion
     - yyyyMMddhhmmss is the current date and time 
     - [_Version] is the optional GnuCash version number if entered.
 
 - Each archive file will contain encrypted copies of the 3 data files.
-The files will be encrypted, using the entered password, by free
-software **7-Zip**, using AES-256 encryption.
+  The files will be encrypted, using the entered password, by free
+  software **7-Zip**, using AES-256 encryption.
 
-BackupGnuCash is not intended to be used to conceal illegal activities.
-The GnuCash data files are encrypted in the archive because, even though
-3rd party cloud storage services usually try hard to ensure the privacy
-of your data, why risk unencrypted data in the cloud if you don't have to?
+  BackupGnuCash is not intended to be used to conceal illegal activities.
+  The GnuCash data files are encrypted in the archive because, even though
+  3rd party cloud storage services usually try hard to ensure the privacy
+  of your data, why risk unencrypted data in the cloud if you don't have to?
 
-BackupGnuCash does not provide any facility for extracting the data files
-from an encrypted archive. 7-Zip must be installed in order for the
-encrypted archives to be created and for the data files to be extracted.
+  BackupGnuCash does not provide any facility for extracting the data files
+  from an encrypted archive. 7-Zip must be installed in order for the
+  encrypted archives to be created and for the data files to be extracted.
 
-**Windows**: 7-Zip includes gui tool **7-Zip File Manager** which can be used to
-decrypt the archive files if they need to be restored.
-Alternatively, use the 7-Zip command in a command prompt window, E.g.
-```
+  **Windows**: 7-Zip includes gui tool **7-Zip File Manager** which can be used to
+  decrypt the archive files if they need to be restored.
+  Alternatively, use the 7-Zip command in a command prompt window, E.g.
+  ```
     C:\Program Files\7-Zip\7z.exe e archive.7z
-```
-extracts all files from archive archive.7z to the current folder.
-```
-  C:\Program Files\7-Zip\7z.exe e archive.7z -oc:\soft *.gnucash
-```
-extracts *.gnucash files from archive archive.7z to c:\soft folder.
+  ```
+  extracts all files from archive archive.7z to the current folder.
+  ```
+    C:\Program Files\7-Zip\7z.exe e archive.7z -oc:\soft *.gnucash
+  ```
+  extracts *.gnucash files from archive archive.7z to c:\soft folder.
 
-**GNU/Linux**: **Archive Manager** can be used to manage 7-Zip files if the
-**p7zip-full** package is installed.
-Alternatively, use the 7-Zip command in a terminal window, E.g.
-```
+  **GNU/Linux**: **Archive Manager** can be used to manage 7-Zip files if the
+  **p7zip-full** package is installed.
+  Alternatively, use the 7-Zip command in a terminal window, E.g.
+  ```
     7z e archive.7z
-```
-extracts all files from archive archive.7z to the current directory.
-```
+  ```
+  extracts all files from archive archive.7z to the current directory.
+  ```
   7z e archive.7z -o/tmp "*.gnucash"
-```
-extracts *.gnucash files from archive archive.7z to /tmp directory.
+  ```
+  extracts *.gnucash files from archive archive.7z to /tmp directory.
 
-Of course, the user needs to enter the password carefully, and remember it!
-**If the password is entered incorrectly or forgotten, the encrypted archives
-will be of no use.**
+  Of course, the user needs to enter the password carefully, and remember it!
+  **If the password is entered incorrectly or forgotten, the encrypted archives
+  will be of no use.**
 
-There is a **Show** checkbox to the right of the password. If this is checked,
-the password will display. If it is unchecked, the characters of the
-password will display as asterixes.
-After ensuring no-one is watching, show and carefully check the password
-each time you enter it.
+  There is a **Show** checkbox to the right of the password. If this is checked,
+  the password will display. If it is unchecked, the characters of the
+  password will display as asterixes.
+  After ensuring no-one is watching, show and carefully check the password
+  each time you enter it.
 
 
 ### Home Page
@@ -260,18 +260,19 @@ Windows:   C:\Users\[USER_NAME]\Documents\BackupGnuCash\BackupGnuCash.jar
 ## Dependencies
 ------------
 
-There are 2 ways to use this application.
-1) Download the prebuilt BackupGnuCash.jar from this project
+There are 2 ways to use this application:
 
-   This application comes with no warranty and you should think about the security
-   implications of using software downloaded from the internet. You are trusting
-   my good nature and the codebase from which this is built!
-   I have not security audited this code.
+  1. Download the prebuilt BackupGnuCash.jar from this project
 
-OR
+     This application comes with no warranty and you should think about the security
+     implications of using software downloaded from the internet. You are trusting
+     my good nature and the codebase from which this is built!
+     I have not security audited this code.
 
-2) Download the project source from github, check the code for security and
-build your own copy of BackupGnuCash.jar.
+  OR
+
+  2. Download the project source from github, check the code for security and
+     build your own copy of BackupGnuCash.jar.
 
 ### To download the prebuilt BackupGnuCash.jar from github
 
@@ -279,15 +280,15 @@ build your own copy of BackupGnuCash.jar.
   ```
     https://github.com/goodvibes2/BackupGnuCashWin
   ```
-  which is the project for Microsoft Windows using
-  Oracle Java 8, and netbeans IDE 8.0
+    which is the project for Microsoft Windows using
+    Oracle Java 8, and netbeans IDE 8.0
 
-AND
+  AND
   ```
     https://github.com/goodvibes2/BackupGnuCashLinux
   ```
-  which is the project for GNU/Linux Ubuntu 16.04 using
-  Java OpenJDK 8, OpenJFX, and netbeans IDE 8.1
+    which is the project for GNU/Linux Ubuntu 16.04 using
+    Java OpenJDK 8, OpenJFX, and netbeans IDE 8.1
 
 The java source files in both the above projects should be identical
 and the dist/BackupGnuCash.jar files in both, being Java bytecode, should
@@ -344,6 +345,7 @@ http://chriswhocodes.com/.
 
 ###### Oracle Java
 Note: Oracle Java 8 includes JavaFX.
+
 Install Oracle Java SE 8 RunTime Environment (jre) from
 http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html
 
@@ -392,7 +394,7 @@ but not for
 ```
 E.g.
 ```
-    java -jar /home/[USER_NAME]/BackupGnuCash/BackupGnuCash.jar
+    java -jar /home/[USER_NAME]/BackupGnuCash/BackupGnuCash.jar &
 ```
 **Ubuntu**: To set up a BackupGnuCash.desktop file so it can be started from the Unity
 Dash:
@@ -415,6 +417,14 @@ Type=Application
 Categories=Office;Finance;
 ```
 Ensure the **Exec=** line above points to where you put **BackupGnuCash.jar**.
+
+You can also create a shortcut on your **Desktop** by copying backup-gnucash.desktop
+to ~/Desktop. Ensure it has execute permissions or you will get error
+**Untrusted Application Launcher**. E.g.
+```
+  cp /usr/share/applications/backup-gnucash.desktop ~/Desktop
+  chmod +x ~/Desktop
+```
 
 ### Windows
 Create a shortcut on your desktop:
@@ -444,7 +454,7 @@ BackupGnuCash is currently English only.
       Ubuntu 16.04 xenial
       openjdk version 1.8.0_91
       openjfx 8u60-b27-4
-      SceneBuilder 8.2.0 
+      SceneBuilder (Gluon) 8.2.0 
       netbeans IDE 8.1
       7-Zip 9.20 (p7zip-full)
 ```
@@ -452,7 +462,7 @@ BackupGnuCash is currently English only.
 ```
       Windows 10 64-bit
       Oracle 8 jdk (1.8.0_91) which includes JavaFX
-      SceneBuilder Oracle SceneBuilder 2.0
+      SceneBuilder (Oracle) 2.0
       netbeans IDE 8.0
       7-Zip 9.20
 ```
@@ -530,23 +540,19 @@ of which are held in BackupGnuCash.fxml.
 You only need to install SceneBuilder if you wish to modify the user
 interface.
 
-    SceneBuilder is no longer available from Oracle.
+SceneBuilder is no longer available from Oracle.
 
-    Download from
-      http://gluonhq.com/open-source/scene-builder
+Download from http://gluonhq.com/open-source/scene-builder.
 
 #### Netbeans IDE
-If you haven't already installed netbeans as part of a Oracle combined
+If you haven't already installed netbeans as part of an Oracle combined
 jdk and netbeans:
 
-Download and install from
-https://netbeans.org/downloads/.
+Download and install from https://netbeans.org/downloads/.
 
 #### 7-Zip
-Install from
-http://www.7-zip.org/download.html
-or
-https://sourceforge.net/projects/sevenzip/
+Install from http://www.7-zip.org/download.html
+or https://sourceforge.net/projects/sevenzip.
 
 If running a 64-bit version of Windows, download and install the 64-bit
 version of 7-Zip as BackupGnuCash looks for either
@@ -589,35 +595,35 @@ There are 2 main ways to download the netbeans project from github:
 
 1) If you already have a github account and git installed, you can clone:
 
-    **GNU/Linux**: At the command line:
-    ```
-       cd
-       mkdir NetBeansProjects
-       cd NetBeansProjects
-       git clone https://github.com/goodvibes2/BackupGnuCashLinux BackupGnuCash
-    ```
-    **Windows**: In a **git** shell:
-    ```
-       cd ~/Documents
-       mdkir NetBeansProjects
-       cd NetBeansProjects
-       git clone https://github.com/goodvibes2/BackupGnuCashWin BackupGnuCash
-    ```
+   **GNU/Linux**: At the command line:
+   ```
+      cd
+      mkdir NetBeansProjects
+      cd NetBeansProjects
+      git clone https://github.com/goodvibes2/BackupGnuCashLinux BackupGnuCash
+   ```
+   **Windows**: In a **git** shell:
+   ```
+      cd ~/Documents
+      mdkir NetBeansProjects
+      cd NetBeansProjects
+      git clone https://github.com/goodvibes2/BackupGnuCashWin BackupGnuCash
+   ```
 OR
 
 2) Open the required Linux or Windows URL from above in a web browser,
 click on the green **Clone or download** button,
 click on **Download ZIP**.
 Extract all files from the zip, retaining directories, to
-    ```
-      C:\Users\[USER_NAME]\Documents\NetBeansProjects
-    ```
-    I suggest after extracting, rename folder
-    ```
-       C:\Users\[USER_NAME]\Documents\NetBeansProjects\BackupGnuCashWin-master
-     to
-       C:\Users\[USER_NAME]\Documents\NetBeansProjects\BackupGnuCash
-    ```
+```
+  C:\Users\[USER_NAME]\Documents\NetBeansProjects
+```
+I suggest after extracting, rename folder
+```
+  C:\Users\[USER_NAME]\Documents\NetBeansProjects\BackupGnuCashWin-master
+  to
+  C:\Users\[USER_NAME]\Documents\NetBeansProjects\BackupGnuCash
+```
     
 ## Supported Platforms
 -------------------
