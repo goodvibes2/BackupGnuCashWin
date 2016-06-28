@@ -27,6 +27,7 @@
                    b. If not Windows, use getenv("USER") instead of USERNAME to
                       fix NullPointerException in Ubuntu.
                    c. DropBox -> Dropbox.
+   28/06/2016 1.20 1. Also check for Windows 7-Zip in program Files (x86).
    
 */
 
@@ -496,16 +497,24 @@ public class BackupGnuCashController implements Initializable {
             if (! Files.isExecutable(path7z)) {
                 path7z = Paths.get("E:" + str7z);
                 if (! Files.isExecutable(path7z)) {
-                    taLog.setText("Error: Cannot execute " + str7z 
-                        + " on either C: or E:" );
-                    return;
+                    str7z = "\\Program Files (x86)\\7-Zip\\7z.exe";
+                    path7z = Paths.get("C:" + str7z);
+                    if (! Files.isExecutable(path7z)) {
+                        path7z = Paths.get("E:" + str7z);
+                        if (! Files.isExecutable(path7z)) {
+                            taLog.setText("Error: Cannot find or execute "
+                                + "\\Program Files\\7-Zip\\7z.exe or " + str7z 
+                                + " on either C: or E:" );
+                            return;    
+                        }
+                    }
                 }
             }
         } else {
             str7z = "/usr/bin/7z";
             path7z = Paths.get(str7z);
             if (! Files.isExecutable(path7z)) {
-                taLog.setText("Error: Cannot execute " + str7z );
+                taLog.setText("Error: Cannot find or execute " + str7z );
                 return;
             }
         }

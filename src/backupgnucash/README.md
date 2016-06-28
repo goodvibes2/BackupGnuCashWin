@@ -53,7 +53,7 @@ and click the Backup button. BackupGnuCash then encrypts the GnuCash data,
 saved reports and preferences files to a date/time stampded file name in
 the local 3rd party cloud storage directory.
 
-- All GnuCash data files needed for system recovery are backed up.
+- All the usual GnuCash data files needed for system recovery are backed up.
 The 3 files backed up into each archive file are:
   1. the **main GnuCash data file** which usually has a .gnucash extension.
      For example:
@@ -80,6 +80,19 @@ The 3 files backed up into each archive file are:
   These 3 files are all that is usually required when restoring or
   moving to a new computer, apart from the GnuCash program itself
   which can be downloaded from https://www.gnucash.org/download.
+
+  If you have customised GnuCash in any way that involves files other than
+  the 3 mentioned above, you also should ensure you either have backups
+  of them or instructions for recreating your customisations.
+  For example, you need to have a secure record of your online banking
+  authorisation information so you can set up online banking again if you
+  need to move GnuCash to another computer. This information is held in
+  the registry on Windows systems.
+
+  Using BackupGnuCash is NOT a substitute for regular full system backups.
+  Most customisations that are not held in the 3 files saved by this app,
+  do not often change, so using BackupGnuCash say daily, along with say
+  monthly full system backups, may be a reasonable backup strategy.
 
 - One-time setup of:
   1. **location and name of the GnuCash data file**.
@@ -556,19 +569,13 @@ Download and install from https://netbeans.org/downloads/.
 Install from http://www.7-zip.org/download.html
 or https://sourceforge.net/projects/sevenzip.
 
-If running a 64-bit version of Windows, download and install the 64-bit
-version of 7-Zip as BackupGnuCash looks for either
+BackupGnuCash looks for
 ```
-C:\Program Files\7-Zip\7z.exe
+\Program Files\7-Zip\7z.exe
 or
-E:\Program Files\7-Zip\7z.exe
+\Program Files (x86)\7-Zip\7z.exe
 ```
-but not
-```
-C:\Program Files (x86)\7-Zip\7z.exe
-or
-E:\Program Files (x86)\7-Zip\7z.exe
-```
+on both the C: and E: drive.
 
 #### To download the source files and netbeans project
 
