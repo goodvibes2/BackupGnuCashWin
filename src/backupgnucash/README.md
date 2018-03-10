@@ -40,7 +40,7 @@ Free software **7-Zip** is used to perform the encryption.
 
 The BackupGnuCash project is _not_ part of the GnuCash project.
 
-If you need help, please email chris.good@ozemail.com.au and I will help
+If you need help, please email goodchris96@gmail.com and I will help
 if I can and have time available.
 Please read all of this document before asking for help.
 
