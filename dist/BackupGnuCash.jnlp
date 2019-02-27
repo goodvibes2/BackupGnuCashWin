@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="BackupGnuCash.jar" size="55196" download="eager" />
+    <jar href="BackupGnuCash.jar" size="55464" download="eager" />
   </resources>
 <security>
   <all-permissions/>
