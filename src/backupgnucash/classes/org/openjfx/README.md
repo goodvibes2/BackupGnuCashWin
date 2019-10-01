@@ -15,7 +15,7 @@ The last known BackupGnuCash stable series is
   - [Overview](#Overview)
   - [Features](#Features)
   - [Selecting BackupGnuCash Version](#BackupGnuCashVersion)
-  - [Selecting Precompiled BackupGnuCash or Compile Yourself](#PreCompiledOrCompile")
+  - [Selecting Precompiled BackupGnuCash or Compile Yourself](#PreCompiledOrCompile)
   - [Dependencies](#Dependencies)
   - [Running](#Running)
   - [Internationalization](#Internationalization)
@@ -394,6 +394,7 @@ None
 ## Selecting BackupGnuCash Version ##
 
 BackupGnuCash V1.x runs in Java 8.
+
 BackupGnuCash V2.x runs in Java 11.
 
 BackupGnuCash versions 1.x and 2.x have the same functionality. Currently (Sep
@@ -559,10 +560,10 @@ target platform (Windows or Linux)
 Find the latest V2.x Release, then find the Assets section. To download the
 Runtime Image archive, click on
 ```
-GNU/Linux       BackupGnuCash_rel2.nn.tar.gz
-Windows         BackupGnuCash_rel2.nn.zip
+GNU/Linux       BackupGnuCash_rel2.n.n.tar.gz
+Windows         BackupGnuCash_rel2.n.n.zip
 ```
-where 2.nn is the required release.
+where 2.n.n is the required release.
 
 Usually a web browser downloads to your *Downloads* folder.
 Move the downloaded archive file from your *Downloads* folder to a more
@@ -579,7 +580,7 @@ Unpack the Runtime Image
 **GNU/Linux**
 ```
 cd /home/[USERNAME]/BackupGnuCash/
-tar zxf BackupGnuCash_rel2.nn.tar.gz
+tar zxf BackupGnuCash_rel2.n.n.tar.gz
 ```
 
 **Windows**
@@ -588,9 +589,9 @@ Runtime Image archive to the current directory
 ```
 C:
 cd \Users\[USERNAME]\Documents\BackupGnuCash
-C:\Program Files\7-Zip\7z.exe e BackupGnuCash_rel2.nn.zip
+C:\Program Files\7-Zip\7z.exe e BackupGnuCash_rel2.n.n.zip
 ```
-where 2.nn is the required release.
+where 2.n.n is the required release.
 
 <a name="Dependencies"></a>
 ## Dependencies ##
@@ -784,9 +785,9 @@ Name the shortcut **Backup GnuCash**.
 
   To run the app from the command line, type the following
 ```
-  ~/BackupGnuCash/BackupGnuCash_rel2.nn/dist/jlink/BackupGnuCash/bin/BackupGnuCash &
+  ~/BackupGnuCash/BackupGnuCash_rel2.n.n/dist/jlink/BackupGnuCash/bin/BackupGnuCash &
 ```
-where 2.nn is the required release.
+where 2.n.n is the required release.
 E.g.
 ```
   ~/BackupGnuCash/BackupGnuCash_rel2.00/dist/jlink/BackupGnuCash/bin/BackupGnuCash &
@@ -805,13 +806,13 @@ containing
 [Desktop Entry]
 Name=BackupGnuCash
 Comment=Backup GnuCash
-Exec=/home/[UserName]/BackupGnuCash/BackupGnuCash_rel2.nn/dist/jlink/BackupGnuCash/bin/BackupGnuCash
+Exec=/home/[UserName]/BackupGnuCash/BackupGnuCash_rel2.n.n/dist/jlink/BackupGnuCash/bin/BackupGnuCash
 Icon=gnucash-icon
 Terminal=false
 Type=Application
 Categories=Office;Finance;
 ```
-where 2.nn is the required release.
+where 2.n.n is the required release.
 
 You can also create a shortcut on your **Desktop** by copying backup-gnucash.desktop
 to ~/Desktop. Ensure it has execute permissions or you will get error
@@ -830,9 +831,9 @@ New, Shortcut,
 Browse to and select your BackupGnuCash.bat file
 or just type in the full filestring E.g
 ```
-C:\Users\[USERNAME]\Documents\BackupGnuCash\BackupGnuCash_rel2.nn\dist\jlink\BackupGnuCash\bin\BackupGnuCash.bat
+C:\Users\[USERNAME]\Documents\BackupGnuCash\BackupGnuCash_rel2.n.n\dist\jlink\BackupGnuCash\bin\BackupGnuCash.bat
 ```
-where 2.nn is the required release.
+where 2.n.n is the required release.
 Name the shortcut **Backup GnuCash**.
 
 
@@ -1273,10 +1274,10 @@ OR
    ```
    This will download source code archive file
    ```
-   GNU/Linux       BackupGnuCashLinux-v.nn.tar.gz
-   Windows         BackupGnuCashWin-v.nn.zip
+   GNU/Linux       BackupGnuCashLinux-v.n.n.tar.gz
+   Windows         BackupGnuCashWin-v.n.n.zip
    ```
-   where v.nn is the required release.
+   where v.n.n is the required release.
 
    Usually a web browser downloads to your *Downloads* folder.
    Move the downloaded archive file from your *Downloads* folder to a more
@@ -1293,9 +1294,9 @@ OR
    **GNU/Linux**
    ```
      cd /home/[USERNAME]/NetBeansProjects
-     tar zxf BackupGnuCashLinux-v.nn.tar.gz
+     tar zxf BackupGnuCashLinux-v.n.n.tar.gz
    ```
-   where v.nn is the required release.
+   where v.n.n is the required release.
 
    **Windows**
    Use 7-Zip in a command prompt window to unpack all the files from the
@@ -1303,9 +1304,9 @@ OR
    ```
    C:
    cd \Users\[USERNAME]\Documents\NetBeansProjects
-   C:\Program Files\7-Zip\7z.exe e BackupGnuCashWin-v.nn.zip
+   C:\Program Files\7-Zip\7z.exe e BackupGnuCashWin-v.n.n.zip
    ```
-   where v.nn is the required release.
+   where v.n.n is the required release.
 
 After extracting, before you open the project in NetBeans, you should edit the
 following files to ensure the paths match your project
